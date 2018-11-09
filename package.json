@@ -1,0 +1,19 @@
+{
+  "name": "@ostdotcom/kyc-sdk-js",
+  "version": "1.0.0",
+  "description": "KYC sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenSTFoundation/kyc-sdk-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenSTFoundation/kyc-sdk-js/issues"
+  },
+  "homepage": "https://github.com/OpenSTFoundation/kyc-sdk-js#readme"
+}
