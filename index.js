@@ -8,11 +8,14 @@
 * */
 
 
-const rootPrefix = '.';
+const rootPrefix = '.'
+  ,   serviceManifestKlass    = require(rootPrefix + '/services/manifest');
 
-const KYCSDK = function () {
+
+
+const KYCSDK = function (params) {
   const oThis = this;
-
+  oThis.services = new serviceManifestKlass(params);
 };
 
 module.exports = KYCSDK;
