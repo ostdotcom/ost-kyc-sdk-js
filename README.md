@@ -31,7 +31,7 @@ const KYCSDK = require('@ostdotcom/kyc-sdk-js');
 Initialize the SDK object:
 
 ```node.js
-// the latest valid API endpoint is "https://sandboxapi.ost.com/v1/", this may change in the future
+// the latest valid API endpoint is "https://kyc.sandboxost.com", this may change in the future
 const kycObj = new KYCSDK({apiKey: <api_key>, apiSecret: <api_secret>, apiEndpoint: <api_endpoint>});
 ```
 
