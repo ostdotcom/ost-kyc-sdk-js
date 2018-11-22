@@ -74,8 +74,8 @@ usersKyc.prototype = {
   get: function (params) {
     const oThis = this;
     params = params || {};
-    var id = validate.getId(params);
-    sanitize.removeKey(params, 'id');
+    var id = validate.getUserId(params);
+    sanitize.removeKey(params, 'user_id');
     return _requestObj.get(oThis.urlPrefix + "/" + id, params);
   },
 
