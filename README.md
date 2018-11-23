@@ -17,7 +17,7 @@ To use this node module, developers will need to:
 Install OST KYC JavaScript SDK
 
 ```bash
-> npm install @ostdotcom/kyc-sdk-js
+> npm install @ostdotcom/ost-kyc-sdk-js
 ```
 
 ## Example Usage
@@ -25,7 +25,7 @@ Install OST KYC JavaScript SDK
 Require the SDK:
 
 ```node.js
-const KYCSDK = require('@ostdotcom/kyc-sdk-js');
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 ```
 
 Initialize the SDK object:
