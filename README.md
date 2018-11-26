@@ -4,9 +4,10 @@ The official [KYC JavaScript SDK](https://dev.ost.com/docs/kyc/index.html).
 
 ## Requirements
 
+
 To use this node module, developers will need to:
-1. Be a client of OST KYC
-2. Obtain an API Key and API Secret from OST KYC.
+1. Login on [https://kyc.ost.com/admin/login](https://kyc.ost.com/admin/login).
+2. Obtain an API Key and API Secret from [https://kyc.ost.com/admin/settings/developer-integrations](https://kyc.ost.com/admin/settings/developer-integrations).
 
 ## Documentation
 
