@@ -32,7 +32,9 @@ Initialize the SDK object:
 
 ```node.js
 // the latest valid API endpoint is "https://kyc.sandboxost.com", this may change in the future
-const kycObj = new KYCSDK({apiKey: <api_key>, apiSecret: <api_secret>, apiEndpoint: <api_endpoint>});
+// timeout can be passed in config object. This is http request timeout.(In seconds)
+const kycObj = new KYCSDK({apiKey: <api_key>, apiSecret: <api_secret>, apiEndpoint: <api_endpoint>, 
+config: {timeout: <timeout>}});
 ```
 
 ### Users Module 
