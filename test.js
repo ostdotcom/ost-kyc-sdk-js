@@ -15,10 +15,10 @@ const rootPrefix = ".",
   testObjForSignature = configObj["testObjForSignature"],
 
   credentialObject = {
-    apiKey: process.env.API_KEY,
-    secret: process.env.API_SECRET
+    apiKey: process.env.OST_KYC_API_KEY,
+    secret: process.env.OST_KYC_API_SECRET
   },
-  apiEndpont = process.env.API_BASE_URL,
+  apiEndpont = process.env.OST_KYC_API_ENDPOINT,
 
   KYCSDK = require(rootPrefix + "/index"),
   //config is optional param, timeout should be given in seconds
@@ -157,7 +157,6 @@ function testGetPresignedUrlForPut() {
     var userId = process.env.USER_ID
     const response = await
     usersKycService.getPresignedUrlPut(configObj["getPreSignedUrlObj"]).catch(function (err) {
-      console.log("this is error", err['success']);
       assert.fail('Get Presigned Url For Put testcase is failed');
     });
     assert.equal(response.success, true);
@@ -175,7 +174,6 @@ function testGetPresignedUrlForPost() {
     var userId = process.env.USER_ID
     const response = await
     usersKycService.getPresignedUrlPost(configObj["getPreSignedUrlObj"]).catch(function (err) {
-      console.log("this is error", err['success']);
       assert.fail('Get Presigned Url For POST testcase is failed');
     });
     assert.equal(response.success, true);
@@ -236,10 +234,6 @@ function main() {
   testGetPresignedUrlForPost();
   testGetUserKycDetails();
   testValidateEthereumAddress();
-
-
-  //testGetRequest();
-  //checkPostRequest();
 }
 
 main();
