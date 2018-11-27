@@ -18,6 +18,9 @@ const rootPrefix = ".",
     apiKey: process.env.OST_KYC_API_KEY,
     secret: process.env.OST_KYC_API_SECRET
   },
+  credentialObjectForSignatureTest = {
+    secret: configObj['api_secret_for_testing_signature']
+  },
   apiEndpont = process.env.OST_KYC_API_ENDPOINT,
 
   KYCSDK = require(rootPrefix + "/index"),
@@ -34,7 +37,7 @@ function testSignature() {
   it("Signature should match with given one", function () {
     const requestObj = new RequestKlass({apiKey: '12121', apiSecret: 'dsdsd', apiEndpoint: "endpoint"}),
       queryString = requestObj.formatQueryParams(testObjForSignature);
-    var fullQueryString = requestObj.signQueryParamsTest(configObj["testResource"], queryString, credentialObject),
+    var fullQueryString = requestObj.signQueryParamsTest(configObj["testResource"], queryString, credentialObjectForSignatureTest),
       queryStringObj = qs.parse(fullQueryString);
     assert.equal(queryStringObj.signature, configObj["signatureExpected"]);
   });
