@@ -75,7 +75,7 @@ function testGetUsersList() {
 function testCreateUser() {
   it('response.success should be true for testing create request',
     async function () {
-      var email = 'alice+' + Date.now() + '@ost.com';
+      var email = 'alice+' + Date.now() + '_' + process.version  + '@ost.com';
       const response = await
       userService.create({email: email}).catch(function (err) {
         assert.fail('Create User testcase is failed');
