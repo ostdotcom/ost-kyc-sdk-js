@@ -72,7 +72,7 @@ const usersKYCService = kycSdk.services.usersKyc;
 Submit KYC:
 
 ```node.js
-usersKYCService.submitKyc({user_id:11003, first_name:'YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+usersKYCService.submitKyc({user_id:11003, first_name:'RAJESH',  last_name:'KUMAR',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'ADDHBDHBSH', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
 ```
 
 List Users KYC:
@@ -84,7 +84,7 @@ usersKYCService.list().then(function(res) { console.log(JSON.stringify(res)); })
 Get Users KYC
 
 ```node.js
-usersKYCService.get({id:11003}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+usersKYCService.get({user_id:11003}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
 ```
 
 
@@ -126,7 +126,7 @@ usersKYCService.getPresignedUrlPost({
 ### Users KYC details Module 
 
 ```node.js
-const usersKYCDetailsService = kycSdk.services.usersKycDetails,
+const usersKYCDetailsService = kycSdk.services.usersKycDetails;
 ```
 
 Get user's kyc details
