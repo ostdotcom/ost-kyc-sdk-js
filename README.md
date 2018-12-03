@@ -66,7 +66,7 @@ userService.list({}).then(function(res) { console.log(JSON.stringify(res)); }).c
 ### Users KYC module 
 
 ```node.js
-const usersKYCService = kycSdk.services.usersKyc;
+const usersKYCService = kycObj.services.usersKyc;
 ```
 
 Submit KYC:
@@ -126,7 +126,7 @@ usersKYCService.getPresignedUrlPost({
 ### Users KYC details Module 
 
 ```node.js
-const usersKYCDetailsService = kycSdk.services.usersKycDetails;
+const usersKYCDetailsService = kycObj.services.usersKycDetails;
 ```
 
 Get user's kyc details
@@ -139,7 +139,7 @@ usersKYCDetailsService.get({user_id:11003}).then(function(res) { console.log(JSO
     
 
 ```node.js
-const validatorService = kycSdk.services.validators;
+const validatorService = kycObj.services.validators;
 ```
 
 Verify ethereum address
