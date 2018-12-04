@@ -76,7 +76,6 @@ function testGetUsersIdZero() {
 function testGetUsersGarbageId() {
   it('Testing get user with garbage id',
     async function () {
-    var userId = process.env.USER_ID
     try{
       const response = await
       userService.get({id: "&#@%#@#^#6"}).then(function(res){
@@ -85,11 +84,31 @@ function testGetUsersGarbageId() {
       assert.fail('Id is garbage. This should fail');
     }
     catch (error){
-
+      const message = "missing or invalid id in request params";
+      if (error.message != message)
+        assert.fail('Id is garbage or invalid');
     }
-
   }
+);
+}
 
+
+function testGetUsersBlanckId() {
+  it('Testing get user with blank id',
+    async function () {
+    try{
+      const response = await
+      userService.get({id: ""}).then(function(res){
+        assert.fail('Id is garbage. This should fail');
+      });
+      assert.fail('Id is garbage. This should fail');
+    }
+    catch (error){
+      const message = "missing or invalid id in request params";
+      if (error.message != message)
+        assert.fail('Id is garbage or invalid');
+    }
+  }
 );
 }
 
@@ -275,6 +294,7 @@ function main() {
   testValidateEthereumAddress();
   testGetUsersIdZero();
   testGetUsersGarbageId();
+  testGetUsersBlanckId();
 }
 
 main();
