@@ -1,7 +1,7 @@
 {
   "name": "@ostdotcom/ost-kyc-sdk-js",
   "version": "2.0.0",
-  "description": "KYC sdk",
+  "description": "OST KYC sdk",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
