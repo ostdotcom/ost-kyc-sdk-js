@@ -1,14 +1,13 @@
 {
   "name": "@ostdotcom/ost-kyc-sdk-js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "KYC sdk",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "qs": "^6.5.2",
-    "query-string": "6.0.0"
+    "qs": "^6.5.2"
   },
   "devDependencies": {
     "chai": "4.1.2",
@@ -19,7 +18,7 @@
     "url": "git+https://github.com/OpenSTFoundation/kyc-sdk-js.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/OpenSTFoundation/kyc-sdk-js/issues"
   },

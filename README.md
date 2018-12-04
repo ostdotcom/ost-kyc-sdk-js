@@ -4,9 +4,10 @@ The official [KYC JavaScript SDK](https://dev.ost.com/docs/kyc/index.html).
 
 ## Requirements
 
+
 To use this node module, developers will need to:
-1. Be a client of OST KYC
-2. Obtain an API Key and API Secret from OST KYC.
+1. Login on [https://kyc.ost.com/admin/login](https://kyc.ost.com/admin/login).
+2. Obtain an API Key and API Secret from [https://kyc.ost.com/admin/settings/developer-integrations](https://kyc.ost.com/admin/settings/developer-integrations).
 
 ## Documentation
 
@@ -17,7 +18,7 @@ To use this node module, developers will need to:
 Install OST KYC JavaScript SDK
 
 ```bash
-> npm install @ostdotcom/kyc-sdk-js
+> npm install @ostdotcom/ost-kyc-sdk-js
 ```
 
 ## Example Usage
@@ -25,14 +26,16 @@ Install OST KYC JavaScript SDK
 Require the SDK:
 
 ```node.js
-const KYCSDK = require('@ostdotcom/kyc-sdk-js');
+const KYCSDK = require('@ostdotcom/ost-kyc-sdk-js');
 ```
 
 Initialize the SDK object:
 
 ```node.js
 // the latest valid API endpoint is "https://kyc.sandboxost.com", this may change in the future
-const kycObj = new KYCSDK({apiKey: <api_key>, apiSecret: <api_secret>, apiEndpoint: <api_endpoint>});
+// timeout can be passed in config object. This is http request timeout.(In seconds)
+const kycObj = new KYCSDK({apiKey: <api_key>, apiSecret: <api_secret>, apiEndpoint: <api_endpoint>, 
+config: {timeout: <timeout>}});
 ```
 
 ### Users Module 
@@ -63,13 +66,13 @@ userService.list({}).then(function(res) { console.log(JSON.stringify(res)); }).c
 ### Users KYC module 
 
 ```node.js
-const usersKYCService = kycSdk.services.usersKyc;
+const usersKYCService = kycObj.services.usersKyc;
 ```
 
 Submit KYC:
 
 ```node.js
-usersKYCService.submitKyc({user_id:11003, first_name:'YOGESH',  last_name:'SAWANT',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'DMDPS9634C', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+usersKYCService.submitKyc({user_id:11003, first_name:'RAJESH',  last_name:'KUMAR',  birthdate:'29/07/1992', country:'INDIA', nationality:'INDIAN', document_id_number:'ADDHBDHBSH', document_id_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd1', selfie_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd2', ethereum_address:'0x04d39e0b112c20917868ffd5c42372ecc5df577b',estimated_participation_amount:'1.2',residence_proof_file_path:'10/i/4ae058629d4b384edcda8decdfbf0dd3',investor_proof_files_path: ['10/i/4ae058629d4b384edcda8decdfbf0da1', '10/i/4ae058629d4b384edcda8decdfbf0da2'], city:'pune',street_address:'hadapsar',postal_code:'411028',state:'maharashtra'}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
 ```
 
 List Users KYC:
@@ -81,7 +84,7 @@ usersKYCService.list().then(function(res) { console.log(JSON.stringify(res)); })
 Get Users KYC
 
 ```node.js
-usersKYCService.get({id:11003}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
+usersKYCService.get({user_id:11003}).then(function(res) { console.log(JSON.stringify(res)); }).catch(function(err) { console.log(JSON.stringify(err)); });
 ```
 
 
@@ -123,7 +126,7 @@ usersKYCService.getPresignedUrlPost({
 ### Users KYC details Module 
 
 ```node.js
-const usersKYCDetailsService = kycSdk.services.usersKycDetails,
+const usersKYCDetailsService = kycObj.services.usersKycDetails;
 ```
 
 Get user's kyc details
@@ -136,7 +139,7 @@ usersKYCDetailsService.get({user_id:11003}).then(function(res) { console.log(JSO
     
 
 ```node.js
-const validatorService = kycSdk.services.validators;
+const validatorService = kycObj.services.validators;
 ```
 
 Verify ethereum address
