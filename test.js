@@ -58,6 +58,42 @@ function testGetUsers() {
   ;
 }
 
+function testGetUsersIdZero() {
+  it('Testing get user with 0 id',
+    async function () {
+    var userId = process.env.USER_ID
+    const response = await
+    userService.get({id: 0}).then(function(res){
+      assert.fail('Resource is not present. This should fail');
+    }).catch(function (err) {
+      //console.log(err)
+    });
+  }
+);
+}
+
+
+function testGetUsersGarbageId() {
+  it('Testing get user with garbage id',
+    async function () {
+    var userId = process.env.USER_ID
+    try{
+      const response = await
+      userService.get({id: "&#@%#@#^#6"}).then(function(res){
+        assert.fail('Id is garbage. This should fail');
+      });
+      assert.fail('Id is garbage. This should fail');
+    }
+    catch (error){
+
+    }
+
+  }
+
+);
+}
+
+
 function testGetUsersList() {
   it('Testing list user',
     async function () {
@@ -237,6 +273,8 @@ function main() {
   testGetPresignedUrlForPost();
   testGetUserKycDetails();
   testValidateEthereumAddress();
+  testGetUsersIdZero();
+  testGetUsersGarbageId();
 }
 
 main();
