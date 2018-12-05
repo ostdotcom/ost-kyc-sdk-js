@@ -1,6 +1,6 @@
 ## KYC Javascript SDK
 
-The official [KYC JavaScript SDK](https://dev.ost.com/docs/kyc/index.html).
+The official [OST KYC JavaScript SDK](https://dev.ost.com/docs/kyc/index.html).
 
 ## Requirements
 
