@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "OST",
+    "KYC",
+    "Javascript",
+    "Node.js",
+    "SDK"
+  ],
   "dependencies": {
     "qs": "^6.5.2"
   },
@@ -15,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenSTFoundation/kyc-sdk-js.git"
+    "url": "git+https://github.com/OpenSTFoundation/ost-kyc-sdk-js.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OpenSTFoundation/kyc-sdk-js/issues"
+    "url": "https://github.com/OpenSTFoundation/ost-kyc-sdk-js/issues"
   },
-  "homepage": "https://github.com/OpenSTFoundation/kyc-sdk-js#readme"
+  "homepage": "https://github.com/OpenSTFoundation/ost-kyc-sdk-js#readme"
 }
