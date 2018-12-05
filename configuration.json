@@ -16,7 +16,17 @@
   "email": "mayur+67@ost.com"
 },
   "testResource": "/api/v2/users",
-  "signatureExpected": "c42188c53bfdf84e542a0a9c0a78d19c9f497c61e816f169e1907bc98477eb82"
+  "signatureExpected": "c42188c53bfdf84e542a0a9c0a78d19c9f497c61e816f169e1907bc98477eb82",
+  "getPreSignedUrlObj": {"files": {
+    "residence_proof": "application/pdf",
+    "investor_proof_file1": "application/pdf",
+    "investor_proof_file2": "application/pdf",
+    "document_id": "image/jpeg",
+    "selfie": "image/jpeg"
+  }},
+  "api_secret_for_testing_signature":"35f346e5ef825ed4499da98a6ac6b401"
+
+  
 
 
 }
