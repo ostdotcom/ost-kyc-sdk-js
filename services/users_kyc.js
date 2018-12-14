@@ -105,7 +105,32 @@ usersKyc.prototype = {
       suffix = "/pre-signed-urls/for-post";
     return _requestObj.get(oThis.urlPrefix + suffix , params);
 
+  },
+
+  emailApprove: function (params) {
+    const oThis = this,
+    user_id = params.user_id;
+    delete params.user_id;
+    return _requestObj.post(oThis.urlPrefix +"/"+ user_id + "/email/approve"  , params);
+
+  },
+
+  emailDeny: function (params) {
+    const oThis = this,
+      user_id = params.user_id;
+    delete params.user_id;
+    return _requestObj.post(oThis.urlPrefix +"/"+ user_id + "/email/deny"  , params);
+
+  },
+
+  emailReportIssue: function (params) {
+    const oThis = this,
+      user_id = params.user_id;
+    delete params.user_id;
+    return _requestObj.post(oThis.urlPrefix +"/"+ user_id + "/email/report-issue"  , params);
+
   }
+
 
 };
 

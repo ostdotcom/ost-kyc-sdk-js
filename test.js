@@ -280,6 +280,45 @@ function testValidateEthereumAddress() {
 }
 
 
+
+function testemailApprove() {
+  it("test email approve",
+    async function () {
+    var userId = process.env.USER_ID
+    const response = await
+    usersKycService.emailApprove({user_id: process.env.USER_ID}).catch(function (err) {
+      assert.notEqual(err.err.code,'UNAUTHORIZED');
+      assert.notEqual(err.err.code,'NOT_FOUND');
+    });
+  });
+}
+
+
+function testEmailDeny() {
+  it("test email deny",
+    async function () {
+    var userId = process.env.USER_ID
+    const response = await
+    usersKycService.emailDeny({user_id: process.env.USER_ID}).catch(function (err) {
+      assert.notEqual(err.err.code,'UNAUTHORIZED');
+      assert.notEqual(err.err.code,'NOT_FOUND');
+    });
+  });
+}
+
+function testEmailReportIssue() {
+  it("test email report issue",
+    async function () {
+    var userId = process.env.USER_ID
+    const response = await
+    usersKycService.emailReportIssue({user_id: process.env.USER_ID}).catch(function (err) {
+      assert.notEqual(err.err.code,'UNAUTHORIZED');
+      assert.notEqual(err.err.code,'NOT_FOUND');
+    });
+  });
+}
+
+
 function main() {
   testSignature();
   testGetUsers();
@@ -290,6 +329,9 @@ function main() {
   testSubmitKyc();
   testGetPresignedUrlForPut();
   testGetPresignedUrlForPost();
+  testemailApprove();
+  testEmailDeny();
+  testEmailReportIssue();
   testGetUserKycDetails();
   testValidateEthereumAddress();
   testGetUsersIdZero();
@@ -298,8 +340,3 @@ function main() {
 }
 
 main();
-
-
-
-
-
