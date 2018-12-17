@@ -280,15 +280,13 @@ function testValidateEthereumAddress() {
 }
 
 
-
 function testemailApprove() {
   it("test email approve",
     async function () {
-    var userId = process.env.USER_ID
+    var userId = process.env.USER_ID;
     const response = await
-    usersKycService.emailApprove({user_id: process.env.USER_ID}).catch(function (err) {
-      assert.notEqual(err.err.code,'UNAUTHORIZED');
-      assert.notEqual(err.err.code,'NOT_FOUND');
+    usersKycService.emailApprove({user_id: userId}).catch(function (err) {
+      assert.equal(err.err.code,'UNPROCESSABLE_ENTITY');
     });
   });
 }
@@ -297,11 +295,10 @@ function testemailApprove() {
 function testEmailDeny() {
   it("test email deny",
     async function () {
-    var userId = process.env.USER_ID
+    var userId = process.env.USER_ID;
     const response = await
-    usersKycService.emailDeny({user_id: process.env.USER_ID}).catch(function (err) {
-      assert.notEqual(err.err.code,'UNAUTHORIZED');
-      assert.notEqual(err.err.code,'NOT_FOUND');
+    usersKycService.emailDeny({user_id: userId}).catch(function (err) {
+        assert.equal(err.err.code,'UNPROCESSABLE_ENTITY');
     });
   });
 }
@@ -309,11 +306,10 @@ function testEmailDeny() {
 function testEmailReportIssue() {
   it("test email report issue",
     async function () {
-    var userId = process.env.USER_ID
+    var userId = process.env.USER_ID;
     const response = await
-    usersKycService.emailReportIssue({user_id: process.env.USER_ID}).catch(function (err) {
-      assert.notEqual(err.err.code,'UNAUTHORIZED');
-      assert.notEqual(err.err.code,'NOT_FOUND');
+    usersKycService.emailReportIssue({user_id: userId}).catch(function (err) {
+      assert.equal(err.err.code,'UNPROCESSABLE_ENTITY');
     });
   });
 }
