@@ -109,7 +109,7 @@ usersKyc.prototype = {
 
   emailApprove: function (params) {
     const oThis = this,
-    user_id = params.user_id;
+      user_id = validate.getUserId(params);
     delete params.user_id;
     return _requestObj.post(oThis.urlPrefix +"/"+ user_id + "/email/approve"  , params);
 
@@ -117,7 +117,7 @@ usersKyc.prototype = {
 
   emailDeny: function (params) {
     const oThis = this,
-      user_id = params.user_id;
+      user_id = validate.getUserId(params);
     delete params.user_id;
     return _requestObj.post(oThis.urlPrefix +"/"+ user_id + "/email/deny"  , params);
 
@@ -125,7 +125,7 @@ usersKyc.prototype = {
 
   emailReportIssue: function (params) {
     const oThis = this,
-      user_id = params.user_id;
+      user_id = validate.getUserId(params);
     delete params.user_id;
     return _requestObj.post(oThis.urlPrefix +"/"+ user_id + "/email/report-issue"  , params);
 
