@@ -120,6 +120,25 @@ usersKYCService.getPresignedUrlPost({
  ).then(function(res) { console.log(JSON.stringify(res, null, "  ")); }).catch(function(err) { console.log(JSON.stringify(err)); });
 ```
 
+Send KYC approve email
+
+```node.js
+usersKYCService.emailApprove({user_id: 11003}).then(function(res) { console.log(JSON.stringify(res, null, "  ")); }).catch(function(err) { console.log(JSON.stringify(err)); });
+```
+
+Send KYC deny email
+
+```node.js
+usersKYCService.emailDeny({user_id: 11003}).then(function(res) { console.log(JSON.stringify(res, null, "  ")); }).catch(function(err) { console.log(JSON.stringify(err)); });
+```
+
+
+Send KYC report issue email
+
+```node.js
+usersKYCService.emailReportIssue({user_id: 11003}).then(function(res) { console.log(JSON.stringify(res, null, "  ")); }).catch(function(err) { console.log(JSON.stringify(err)); });
+```
+
 
 
 
