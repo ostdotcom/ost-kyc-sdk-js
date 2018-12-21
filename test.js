@@ -280,6 +280,41 @@ function testValidateEthereumAddress() {
 }
 
 
+function testemailApprove() {
+  it("test email approve",
+    async function () {
+    var userId = process.env.USER_ID;
+    const response = await
+    usersKycService.emailApprove({user_id: userId}).catch(function (err) {
+      assert.equal(err.err.code,'UNPROCESSABLE_ENTITY');
+    });
+  });
+}
+
+
+function testEmailDeny() {
+  it("test email deny",
+    async function () {
+    var userId = process.env.USER_ID;
+    const response = await
+    usersKycService.emailDeny({user_id: userId}).catch(function (err) {
+        assert.equal(err.err.code,'UNPROCESSABLE_ENTITY');
+    });
+  });
+}
+
+function testEmailReportIssue() {
+  it("test email report issue",
+    async function () {
+    var userId = process.env.USER_ID;
+    const response = await
+    usersKycService.emailReportIssue({user_id: userId}).catch(function (err) {
+      assert.equal(err.err.code,'UNPROCESSABLE_ENTITY');
+    });
+  });
+}
+
+
 function main() {
   testSignature();
   testGetUsers();
@@ -290,6 +325,9 @@ function main() {
   testSubmitKyc();
   testGetPresignedUrlForPut();
   testGetPresignedUrlForPost();
+  testemailApprove();
+  testEmailDeny();
+  testEmailReportIssue();
   testGetUserKycDetails();
   testValidateEthereumAddress();
   testGetUsersIdZero();
@@ -298,8 +336,3 @@ function main() {
 }
 
 main();
-
-
-
-
-
