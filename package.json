@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenSTFoundation/ost-kyc-sdk-js.git"
+    "url": "git+https://github.com/ostdotcom/ost-kyc-sdk-js.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OpenSTFoundation/ost-kyc-sdk-js/issues"
+    "url": "https://github.com/ostdotcom/ost-kyc-sdk-js/issues"
   },
-  "homepage": "https://github.com/OpenSTFoundation/ost-kyc-sdk-js#readme"
+  "homepage": "https://github.com/ostdotcom/ost-kyc-sdk-js#readme"
 }
