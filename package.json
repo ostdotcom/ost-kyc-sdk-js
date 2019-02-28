@@ -1,6 +1,6 @@
 {
   "name": "@ostdotcom/ost-kyc-sdk-js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "OST KYC sdk",
   "main": "index.js",
   "scripts": {
